@@ -40,3 +40,4 @@ export const schema = gql`
 export default schema
 
 ```
+
