@@ -9,7 +9,7 @@ describe('Schema AST', () => {
       const fileName = 'output.graphql';
       const plugins: Types.ConfiguredPlugin[] = [
         {
-          'graphql-tag-typescript-schema': {},
+          'graphql-tag-schema': {},
         },
       ];
 
@@ -19,7 +19,7 @@ describe('Schema AST', () => {
         throw new Error(SHOULD_THROW_ERROR);
       } catch (e) {
         expect(e.message).not.toBe(SHOULD_THROW_ERROR);
-        expect(e.message).toBe('Plugin "graphql-tag-typescript-schema" requires extension to be ".ts"!');
+        expect(e.message).toBe('Plugin "graphql-tag-schema" requires extension to be ".ts" or ".js"!');
       }
     });
 
@@ -30,22 +30,7 @@ describe('Schema AST', () => {
           add: {},
         },
         {
-          'graphql-tag-typescript-schema': {},
-        },
-      ];
-
-      try {
-        await validate(null, null, null, fileName, plugins);
-      } catch (e) {
-        expect(true).toBeFalsy();
-      }
-    });
-
-    it('Should allow ts extension when its the only plugin', async () => {
-      const fileName = 'output.ts';
-      const plugins: Types.ConfiguredPlugin[] = [
-        {
-          'graphql-tag-typescript-schema': {},
+          'graphql-tag-schema': {},
         },
       ];
 
