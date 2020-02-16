@@ -1,8 +1,8 @@
 {
-  "name": "graphql-tag-typescript-schema",
-  "version": "1.0.2",
-  "description": "GraphQL Code Generator plugin for generating a .ts file from a given schema",
-  "repository": "git@github.com:emolr/graphql-tag-typescript-schema.git",
+  "name": "graphql-tag-schema",
+  "version": "1.0.0",
+  "description": "GraphQL Code Generator plugin for generating a .js / .ts file from a given schema",
+  "repository": "git@github.com:emolr/graphql-tag-schema.git",
   "license": "MIT",
   "scripts": {
     "build": "tsc -m esnext --outDir dist/esnext && tsc -m commonjs --outDir dist/commonjs",
@@ -34,7 +34,7 @@
     "definition": "dist/esnext/index.d.ts"
   },
   "jest-junit": {
-    "outputDirectory": "./test-results/graphql-tag-typescript-schema"
+    "outputDirectory": "./test-results/graphql-tag-schema"
   },
   "publishConfig": {
     "access": "public"

@@ -17,7 +17,7 @@ export default schema
 export const validate: PluginValidateFn<any> = async (schema: GraphQLSchema, documents: Types.DocumentFile[], config: any, outputFile: string, allPlugins: Types.ConfiguredPlugin[]) => {
   const singlePlugin = allPlugins.length === 1;
 
-  if (singlePlugin && extname(outputFile) !== '.ts') {
-    throw new Error(`Plugin "graphql-tag-typescript-schema" requires extension to be ".ts"!`);
+  if (singlePlugin && !['.js', '.ts'].includes(extname(outputFile)) ) {
+    throw new Error(`Plugin "graphql-tag-schema" requires extension to be ".ts" or ".js"!`);
   }
 };
