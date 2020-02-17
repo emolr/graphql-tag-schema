@@ -4,15 +4,13 @@ import { extname } from 'path';
 
 export const plugin: PluginFunction = async (schema: GraphQLSchema): Promise<string> => {
   return `
-const gql = require('graphql-tag')
+import gql from 'graphql-tag'
 
-const schema = gql\`
+export const schema = gql\`
   ${printSchema(schema)}
 \`
 
-module.exports = {
-  schema
-}
+export default schema
 `
 };
 
